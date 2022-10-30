@@ -36,46 +36,46 @@ I have created wireframe views of the three pages that the site will have based 
 ### Welcome Screen
 
 ##### Mobile
-![Alt text](assets/images/Wire_Mobile_Welcome.JPG "a title")
+![Alt text](assets/images/Wire_Mobile_Welcome.JPG "Mobile")
 https://wireframe.cc/wQ6r6B
 ---
 ##### Tablet
-![Alt text](assets/images/Wire_Tablet_Welcome.JPG "a title")
+![Alt text](assets/images/Wire_Tablet_Welcome.JPG "Tablet")
 https://wireframe.cc/SafSfs
 
 ---
 ##### Laptop / Desktop
-![Alt text](assets/images/Wire_Desktop_Welcome.JPG "a title")
+![Alt text](assets/images/Wire_Desktop_Welcome.JPG "Laptop / Desktop")
 https://wireframe.cc/UTqCHl
 ### Main Game Screen
 
 ##### Mobile
-![Alt text](assets/images/Wire_Mobile_Game.JPG "a title")
+![Alt text](assets/images/Wire_Mobile_Game.JPG "Mobile")
 https://wireframe.cc/qbmGOd
 
 ---
 ##### Tablet
-![Alt text](assets/images/Wire_Tablet_Game.JPG "a title")
+![Alt text](assets/images/Wire_Tablet_Game.JPG "Tablet")
 https://wireframe.cc/doqUVW
 ---
 ##### laptop / Desktop
-![Alt text](assets/images/Wire_Desktop_Game.JPG "a title")
+![Alt text](assets/images/Wire_Desktop_Game.JPG "Laptop / Desktop")
 https://wireframe.cc/xWuU9l
 ---
 
 ### Win / Loose Conclusion Screen
 
 ##### Mobile
-![Alt text](assets/images/Wire_Mobile_Conclusion.JPG "a title")
+![Alt text](assets/images/Wire_Mobile_Conclusion.JPG "Mobile")
 https://wireframe.cc/0Rviu0
 ---
 ##### Tablet
-![Alt text](assets/images/Wire_Tablet_Conclusion.JPG "a title")
+![Alt text](assets/images/Wire_Tablet_Conclusion.JPG "Tablet")
 https://wireframe.cc/QImuPM
 
 ---
 ##### Laptop
-![Alt text](assets/images/Wire_Desktop_Conclusion.JPG "a title")
+![Alt text](assets/images/Wire_Desktop_Conclusion.JPG "Laptop / Desktop")
 https://wireframe.cc/TLwtMm
 
 ---
