@@ -29,7 +29,8 @@ The primary goad is to create an educational game to allow people to learn new w
 
 ## Design choices
 
-My design choices are to make an exciting looking game that can be played on all devices from phones to desktop PC within a browser.
+My design choices are to make an exciting looking game that can be played on all devices from phones to desktop PC within a browser. The user will be required to guess a randomly selected word by pressing keys on the keyboard or buttons on screen. There will be a limit to the number of guesses, if this is exceeded the bomb will explode. If the user guesses all the letters of the word the bomb is disarmed and the player wins.
+
 ## Wireframe
 I have created wireframe views of the three pages that the site will have based on my required sections. I used wireframe.cc to complete this task.
 
@@ -79,3 +80,23 @@ https://wireframe.cc/QImuPM
 https://wireframe.cc/TLwtMm
 
 ---
+
+## Logical Code Outline
+
+### Requirements
+* A source of words for each difficulty level, intenal dictionary array and / or external API.
+* Variables to check if entered letters match the code word, number of guesses, turns remaining, difficulty level.
+* Link to external sites to describe the meaning of the word if the user wants to find out.
+
+### High Level Program flow
+1. User selects difficulty level
+2. User clicks / touches GO
+3. A random word is selected based on the difficulty level
+4. The blank word display is set to match the length of the selected word
+5. User enters a character by touching the screen or using the keyboard
+6. The entered character is validated against the dictionary to check it is a suitable, Input validation
+7. If the letter is in the word it is entered into the correct place in the display
+8. On screen feedback, the keyboard highlights letters red or green as they are chosen
+9. If the word is guessed correctly before they run out of time they win
+10. If the user runs out of turns the bomb explodes and the user loses
+11. Win or Loose is displayed with the option to try again.
