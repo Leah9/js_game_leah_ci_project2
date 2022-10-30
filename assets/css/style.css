@@ -1,3 +1,27 @@
-h1 {
-    color: red;
+#main {
+    /* background-color: blue; */
+    justify-content: center;
+    text-align: center;
+}
+
+.flex-container {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#word-display {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#bomb {
+    border-color: gray;
+    border-radius: 50%;
+    background-color: lightgray;
+    /* height: 200px; */
+    width: 70%;
+    padding: 10%;
+    margin: 5%;
 }
