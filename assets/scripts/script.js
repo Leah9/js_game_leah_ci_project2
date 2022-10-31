@@ -9,3 +9,6 @@ let lettersTried = []; // Array of letters that have been tried
 let attemptsRemaining = 15; // Guesses remaining
 let lettersCorrect = 0; // How manu letters have been guessed correctly
 
+// Choose a random word from the dictEasy array
+let word = dictEasy[Math.floor(Math.random() * dictEasy.length)];
+console.log(word); // Check that a word is chosen
