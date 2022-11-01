@@ -22,6 +22,7 @@ function updateWordDisplay()
     {
         $('#word-display').append(wordDisplay[letter]);
     }
+    lettersCorrect ++;
 }
 
 // Create correct number of underscores in display
@@ -47,11 +48,16 @@ $('.keyboard').click(function () {
             $(this).addClass('green');
             wordDisplay[letter] = this.id;
             updateWordDisplay();
+            
         } else {
             $(this).addClass('red');
         }
     }
     lettersTried.push(this.id)
     console.log(lettersTried);
+    if(lettersCorrect === word.length)
+    {
+        alert("Well done !")
+    }
 });
 
