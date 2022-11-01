@@ -26,3 +26,8 @@ $('#word-display').text(wordDisplay); // Update display
 for (let i = 0; i < alphabet.length; i++) {
     $('#keyboard').append(`<div id="${alphabet[i]}" class="keyboard">${alphabet[i]}</div>`);
 }
+
+$('.keyboard').click(function () {
+    console.log(this.id);
+});
+
