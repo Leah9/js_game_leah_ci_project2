@@ -32,6 +32,7 @@ for (let i = 0; i < word.length; i++) {
 console.log(wordDisplay);
 
 $('#word-display').text(wordDisplay); // Update display
+$('#guesses-remaining').text("Attempts remaining = " + attemptsRemaining);
 
 // Create on screen keyboard
 for (let i = 0; i < alphabet.length; i++) {
@@ -55,9 +56,13 @@ $('.keyboard').click(function () {
     }
     lettersTried.push(this.id)
     console.log(lettersTried);
+    attemptsRemaining--;
+    $('#guesses-remaining').text("Attempts remaining = " + attemptsRemaining);
     if(lettersCorrect === word.length)
     {
-        alert("Well done !")
+        alert("Well done!")
+    } else if(attemptsRemaining === 0){
+        alert("Game over");
     }
 });
 
