@@ -1,5 +1,5 @@
 // Create an array of easy level words
-const dictEasy = ['CAT', 'DOG', 'BALL', 'FOOT', 'HAND', 'HEAD', 'RAT', 'BAG', 'SAD', 'PAT', 'LEG', 'ARM', 'CAR', 'BUS', 'TRAIN'];
+const dictEasy = ['CAT', 'DOG', 'BALL', 'CAR', 'BUS', 'TRAIN'];
 const dictMedium = ['BRIDGE', 'VIADUCT', 'MOTORWAY', 'LANDSCAPE', 'PORTRAIT', 'JACKET', 'PICTURE'];
 const dictHard = ['BIOSPHERE', 'ADVENTURE', 'ENVIRONMENT', 'CONTINENT'];
 // Create an array to contain our alphabet
