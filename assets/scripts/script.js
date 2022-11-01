@@ -1,5 +1,7 @@
 // Create an array of easy level words
 const dictEasy = ['CAT', 'DOG', 'BALL', 'FOOT', 'HAND', 'HEAD', 'RAT', 'BAG', 'SAD', 'PAT', 'LEG', 'ARM', 'CAR', 'BUS', 'TRAIN'];
+const dictMedium = ['BRIDGE', 'VIADUCT', 'MOTORWAY', 'LANDSCAPE', 'PORTRAIT', 'JACKET', 'PICTURE'];
+const dictHard = ['BIOSPHERE', 'ADVENTURE', 'ENVIRONMENT', 'CONTINENT'] 
 // Create an array to contain our alphabet
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
@@ -57,8 +59,9 @@ function checkLetterAgainstWord(guessedLetter) {
     }
 }
 
-chooseWord();
+
 console.log(wordDisplay);
+$('#main-game').hide()
 $('#word-display').text(wordDisplay); // Update display
 $('#guesses-remaining').text("Attempts remaining = " + attemptsRemaining);
 // Create on screen keyboard
@@ -72,3 +75,11 @@ $('.keyboard').click(function () {
     checkLetterAgainstWord(this.id);
 });
 
+// Called when the on screen keyboard is pressed
+$('.button').click(function () {
+    difficulty = (this.id);
+    console.log(difficulty)
+    chooseWord();
+    $('#select-difficulty').hide(1000)
+    $('#main-game').show()
+});
