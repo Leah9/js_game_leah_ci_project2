@@ -12,14 +12,19 @@
 }
 
 #word-display {
+    font-weight: 600;
     font-size: 3rem;
     text-align: center;
+    letter-spacing: 0.4rem;
+    background-color: azure;
+    border: darkgray 8px;
+    border-style: inset;
 }
 
 #bomb {
     border-color: gray;
     border-radius: 50%;
-    background-color: lightgray;
+    background-image: radial-gradient(black, darkgray);
     /* height: 200px; */
     width: 70%;
     padding: 10%;
