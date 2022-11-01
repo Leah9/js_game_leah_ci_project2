@@ -1,7 +1,7 @@
 // Create an array of easy level words
 const dictEasy = ['CAT', 'DOG', 'BALL', 'FOOT', 'HAND', 'HEAD', 'RAT', 'BAG', 'SAD', 'PAT', 'LEG', 'ARM', 'CAR', 'BUS', 'TRAIN'];
 const dictMedium = ['BRIDGE', 'VIADUCT', 'MOTORWAY', 'LANDSCAPE', 'PORTRAIT', 'JACKET', 'PICTURE'];
-const dictHard = ['BIOSPHERE', 'ADVENTURE', 'ENVIRONMENT', 'CONTINENT'] 
+const dictHard = ['BIOSPHERE', 'ADVENTURE', 'ENVIRONMENT', 'CONTINENT'];
 // Create an array to contain our alphabet
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
@@ -21,7 +21,20 @@ function resetGameVariables() {
 
 function chooseWord() {
     // Choose a random word from the dictEasy array
-    word = dictEasy[Math.floor(Math.random() * dictEasy.length)];
+    switch (difficulty) {
+        case 'easy':
+            word = dictEasy[Math.floor(Math.random() * dictEasy.length)];
+            attemptsRemaining = 20;
+            break;
+        case 'medium':
+            word = dictMedium[Math.floor(Math.random() * dictEasy.length)];
+            attemptsRemaining = 15;
+            break;
+        case 'hard':
+            word = dictHard[Math.floor(Math.random() * dictEasy.length)];
+            attemptsRemaining = 15;
+            break;
+    }
     console.log(word); // Check that a word is chosen
     // Create correct number of underscores in display
     for (let i = 0; i < word.length; i++) {
@@ -59,16 +72,15 @@ function checkLetterAgainstWord(guessedLetter) {
     }
 }
 
-
 console.log(wordDisplay);
 $('#main-game').hide()
 $('#word-display').text(wordDisplay); // Update display
 $('#guesses-remaining').text("Attempts remaining = " + attemptsRemaining);
+
 // Create on screen keyboard
 for (let i = 0; i < alphabet.length; i++) {
     $('#keyboard').append(`<div id="${alphabet[i]}" class="keyboard">${alphabet[i]}</div>`);
 }
-
 
 // Called when the on screen keyboard is pressed
 $('.keyboard').click(function () {
