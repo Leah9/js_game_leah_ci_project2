@@ -15,14 +15,12 @@ let word = dictEasy[Math.floor(Math.random() * dictEasy.length)];
 console.log(word); // Check that a word is chosen
 
 // Updates the on screen display with the guessed letters
-function updateWordDisplay()
-{
+function updateWordDisplay() {
     $('#word-display').text('');
-    for(letter in wordDisplay)
-    {
+    for (letter in wordDisplay) {
         $('#word-display').append(wordDisplay[letter]);
     }
-    lettersCorrect ++;
+    lettersCorrect++;
 }
 
 // Create correct number of underscores in display
@@ -39,30 +37,31 @@ for (let i = 0; i < alphabet.length; i++) {
     $('#keyboard').append(`<div id="${alphabet[i]}" class="keyboard">${alphabet[i]}</div>`);
 }
 
-// Called when the on screen keyboard is pressed
-$('.keyboard').click(function () {
-    console.log(this.id);
+function checkLetterAgainstWord(guessedLetter) {
     for (letter in word) {
         // Check if the letter is in the word
-        if (word[letter] == this.id) {
+        if (word[letter] == guessedLetter) {
             console.log('CORRECT')
-            $(this).addClass('green');
-            wordDisplay[letter] = this.id;
+            $('#' + guessedLetter).addClass('green');
+            wordDisplay[letter] = guessedLetter;
             updateWordDisplay();
-            
         } else {
-            $(this).addClass('red');
+            $('#' + guessedLetter).addClass('red');
+        }
+        lettersTried.push(this.id);
+        attemptsRemaining--;
+        $('#guesses-remaining').text("Attempts remaining = " + attemptsRemaining);
+        if (lettersCorrect === word.length) {
+            alert("Well done!")
+        } else if (attemptsRemaining === 0) {
+            alert("Game over");
         }
     }
-    lettersTried.push(this.id)
-    console.log(lettersTried);
-    attemptsRemaining--;
-    $('#guesses-remaining').text("Attempts remaining = " + attemptsRemaining);
-    if(lettersCorrect === word.length)
-    {
-        alert("Well done!")
-    } else if(attemptsRemaining === 0){
-        alert("Game over");
-    }
+
+}
+
+// Called when the on screen keyboard is pressed
+$('.keyboard').click(function () {
+    checkLetterAgainstWord(this.id);
 });
 
