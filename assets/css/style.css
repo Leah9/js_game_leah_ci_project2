@@ -37,3 +37,11 @@
     width: 1.5em;
     text-align: center;
 }
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: greenyellow;
+}

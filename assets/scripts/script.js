@@ -34,6 +34,9 @@ $('.keyboard').click(function () {
         // Check if the letter is in the word
         if (word[letter] == this.id) {
             console.log('CORRECT')
+            $(this).addClass('green');
+        } else {
+            $(this).addClass('red');
         }
     }
     lettersTried.push(this.id)
