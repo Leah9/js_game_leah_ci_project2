@@ -14,6 +14,16 @@ let wordDisplay = []; // Array for the guessed letters progress display
 let word = dictEasy[Math.floor(Math.random() * dictEasy.length)];
 console.log(word); // Check that a word is chosen
 
+// Updates the on screen display with the guessed letters
+function updateWordDisplay()
+{
+    $('#word-display').text('');
+    for(letter in wordDisplay)
+    {
+        $('#word-display').append(wordDisplay[letter]);
+    }
+}
+
 // Create correct number of underscores in display
 for (let i = 0; i < word.length; i++) {
     wordDisplay.push('_')
@@ -35,6 +45,8 @@ $('.keyboard').click(function () {
         if (word[letter] == this.id) {
             console.log('CORRECT')
             $(this).addClass('green');
+            wordDisplay[letter] = this.id;
+            updateWordDisplay();
         } else {
             $(this).addClass('red');
         }
