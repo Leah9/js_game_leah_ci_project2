@@ -7,14 +7,14 @@ let difficulty = 'Easy'; // Difficulty level
 let lettersTried = []; // Array of letters that have been tried
 let attemptsRemaining = 15; // Guesses remaining
 let lettersCorrect = 0; // How manu letters have been guessed correctly
-var wordDisplay = []; // Array for the guessed letters progress display
+let wordDisplay = []; // Array for the guessed letters progress display
 let word = [];
 
 function resetGameVariables() {
-    let lettersTried = []; // Array of letters that have been tried
-    let attemptsRemaining = 15; // Guesses remaining
-    let lettersCorrect = 0; // How manu letters have been guessed correctly
-    var wordDisplay = [];
+    lettersTried = []; // Array of letters that have been tried
+    attemptsRemaining = 15; // Guesses remaining
+    lettersCorrect = 0; // How manu letters have been guessed correctly
+    wordDisplay = [];
 }
 
 function chooseWord() {
