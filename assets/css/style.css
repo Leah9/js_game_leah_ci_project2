@@ -25,3 +25,15 @@
     padding: 10%;
     margin: 5%;
 }
+
+.keyboard{
+    font-size: 1.5rem;
+    float: left;
+    padding: 5px;
+    margin: 0.1em;
+    border-color: rgb(32, 45, 49);
+    border: solid;
+    border-radius: 10%;
+    width: 1.5em;
+    text-align: center;
+}

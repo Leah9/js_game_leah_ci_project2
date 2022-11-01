@@ -21,3 +21,8 @@ for (let i = 0; i < word.length; i++) {
 console.log(wordDisplay);
 
 $('#word-display').text(wordDisplay); // Update display
+
+// Create on screen keyboard
+for (let i = 0; i < alphabet.length; i++) {
+    $('#keyboard').append(`<div id="${alphabet[i]}" class="keyboard">${alphabet[i]}</div>`);
+}
