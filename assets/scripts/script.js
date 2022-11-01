@@ -27,7 +27,16 @@ for (let i = 0; i < alphabet.length; i++) {
     $('#keyboard').append(`<div id="${alphabet[i]}" class="keyboard">${alphabet[i]}</div>`);
 }
 
+// Called when the on screen keyboard is pressed
 $('.keyboard').click(function () {
     console.log(this.id);
+    for (letter in word) {
+        // Check if the letter is in the word
+        if (word[letter] == this.id) {
+            console.log('CORRECT')
+        }
+    }
+    lettersTried.push(this.id)
+    console.log(lettersTried);
 });
 
