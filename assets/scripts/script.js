@@ -16,8 +16,12 @@ function resetGameVariables() {
     attemptsRemaining = 15; // Guesses remaining
     lettersCorrect = 0; // How manu letters have been guessed correctly
     lettersTried = [];
+    for(let letter in alphabet){
+        $('#' + alphabet[letter]).removeClass('green');
+        $('#' + alphabet[letter]).removeClass('red');
+        console.log(letter);
+    }
     //wordDisplay = [];
-    
 }
 
 function chooseWord(difficulty) {
@@ -39,12 +43,13 @@ function chooseWord(difficulty) {
     }
     console.log(word); // Check that a word is chosen
     // Create correct number of underscores in display
-    for (let i = 0; i < word.length; i++) {
+    for (i = 0; i < word.length; i++) {
         wordDisplay.push('_')
     }
 }
 
-function updateWordDisplay() { // Updates the on screen display with the guessed letters
+// Updates the on screen display with the guessed letters
+function updateWordDisplay() { 
     $('#word-display').text('');
     for (letter in wordDisplay) {
         $('#word-display').append(wordDisplay[letter]);
@@ -68,17 +73,17 @@ function checkLetterAgainstWord(guessedLetter) {
     }
     lettersTried.push(guessedLetter);
     console.log(lettersTried);
-    console.log("word length = " + word.length);
-    console.log("letters correct = " + lettersCorrect);
+    console.log('word length = ' + word.length);
+    console.log('letters correct = ' + lettersCorrect);
     attemptsRemaining--;
-    $('#guesses-remaining').text("Attempts remaining = " + attemptsRemaining);
+    $('#guesses-remaining').text('Attempts remaining = ' + attemptsRemaining);
     if (lettersCorrect === word.length + 1) {
-        // alert("Well done!")
+        // alert('Well done!')
         $('#main-game').hide();
         $('#conclusion').show();
         $('#win-lose').text('Congratulations you win !');
     } else if (attemptsRemaining === 0) {
-        // alert("Game over");
+        // alert('Game over');
         $('#main-game').hide();
         $('#conclusion').show();
         $('#win-lose').text('Sorry you lose better luck next time!');
@@ -90,11 +95,11 @@ console.log(wordDisplay);
 $('#main-game').hide();
 $('#conclusion').hide();
 $('#word-display').text(wordDisplay); // Update display
-$('#guesses-remaining').text("Attempts remaining = " + attemptsRemaining);
+$('#guesses-remaining').text('Attempts remaining = ' + attemptsRemaining);
 
 // Create on screen keyboard
 for (let i = 0; i < alphabet.length; i++) {
-    $('#keyboard').append(`<div id="${alphabet[i]}" class="keyboard">${alphabet[i]}</div>`);
+    $('#keyboard').append(`<div id='${alphabet[i]}' class='keyboard'>${alphabet[i]}</div>`);
 }
 
 // Called when the on screen keyboard is pressed
