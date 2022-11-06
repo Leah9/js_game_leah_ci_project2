@@ -5,7 +5,6 @@ const dictHard = ['BIOSPHERE', 'ADVENTURE', 'ENVIRONMENT', 'CONTINENT'];
 // Create an array to contain our alphabet
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
-let difficulty = 'Easy'; // Difficulty level
 let lettersTried = []; // Array of letters that have been tried
 let attemptsRemaining = 15; // Guesses remaining
 let lettersCorrect = 0; // How manu letters have been guessed correctly
@@ -16,11 +15,14 @@ function resetGameVariables() {
     lettersTried = []; // Array of letters that have been tried
     attemptsRemaining = 15; // Guesses remaining
     lettersCorrect = 0; // How manu letters have been guessed correctly
-    wordDisplay = [];
+    lettersTried = [];
+    //wordDisplay = [];
+    
 }
 
-function chooseWord() {
+function chooseWord(difficulty) {
     // Choose a random word from the dictEasy array
+    wordDisplay = [];
     switch (difficulty) {
         case 'easy':
             word = dictEasy[Math.floor(Math.random() * dictEasy.length)];
@@ -64,10 +66,13 @@ function checkLetterAgainstWord(guessedLetter) {
             $('#' + guessedLetter).addClass('red');
         }
     }
-    lettersTried.push(this.id);
+    lettersTried.push(guessedLetter);
+    console.log(lettersTried);
+    console.log("word length = " + word.length);
+    console.log("letters correct = " + lettersCorrect);
     attemptsRemaining--;
     $('#guesses-remaining').text("Attempts remaining = " + attemptsRemaining);
-    if (lettersCorrect === word.length) {
+    if (lettersCorrect === word.length + 1) {
         // alert("Well done!")
         $('#main-game').hide();
         $('#conclusion').show();
@@ -97,12 +102,12 @@ $('.keyboard').click(function () {
     checkLetterAgainstWord(this.id);
 });
 
-// Called when the on screen keyboard is pressed
+// Called when the difficulty is pressed
 $('.button').click(function () {
-    difficulty = (this.id);
-    console.log(difficulty);
-    chooseWord();
+    resetGameVariables();
+    chooseWord(this.id); // Choose new word this.id is difficulty
+    updateWordDisplay();
     $('#select-difficulty').hide(1000);
-    $('#conclusion').hide();
+    $('#conclusion').hide(1000);
     $('#main-game').show();
 });
