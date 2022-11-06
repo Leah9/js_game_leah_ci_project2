@@ -55,10 +55,12 @@ function checkLetterAgainstWord(guessedLetter) {
         // Check if the letter is in the word
         if (word[letter] == guessedLetter) {
             console.log('CORRECT')
+            // Colour the keyboard green
             $('#' + guessedLetter).addClass('green');
             wordDisplay[letter] = guessedLetter;
             updateWordDisplay();
         } else {
+            // Colour the keyboard red
             $('#' + guessedLetter).addClass('red');
         }
     }
@@ -66,14 +68,22 @@ function checkLetterAgainstWord(guessedLetter) {
     attemptsRemaining--;
     $('#guesses-remaining').text("Attempts remaining = " + attemptsRemaining);
     if (lettersCorrect === word.length) {
-        alert("Well done!")
+        // alert("Well done!")
+        $('#main-game').hide();
+        $('#conclusion').show();
+        $('#win-lose').text('Congratulations you win !');
     } else if (attemptsRemaining === 0) {
-        alert("Game over");
+        // alert("Game over");
+        $('#main-game').hide();
+        $('#conclusion').show();
+        $('#win-lose').text('Sorry you lose better luck next time!');
     }
 }
 
 console.log(wordDisplay);
-$('#main-game').hide()
+// Hide the divs that are not being used
+$('#main-game').hide();
+$('#conclusion').hide();
 $('#word-display').text(wordDisplay); // Update display
 $('#guesses-remaining').text("Attempts remaining = " + attemptsRemaining);
 
@@ -90,8 +100,9 @@ $('.keyboard').click(function () {
 // Called when the on screen keyboard is pressed
 $('.button').click(function () {
     difficulty = (this.id);
-    console.log(difficulty)
+    console.log(difficulty);
     chooseWord();
-    $('#select-difficulty').hide(1000)
-    $('#main-game').show()
+    $('#select-difficulty').hide(1000);
+    $('#conclusion').hide();
+    $('#main-game').show();
 });
