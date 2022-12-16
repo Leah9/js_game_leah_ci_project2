@@ -21,6 +21,7 @@ function resetGameVariables() {
         $('#' + alphabet[letter]).removeClass('red');
         console.log(letter);
     }
+    $('#bomb').css("background-image", "url(/assets/images/Bunny-bomb.png)");
     //wordDisplay = [];
 }
 
@@ -93,6 +94,7 @@ function checkLetterAgainstWord(guessedLetter) {
         $('#select-difficulty').show(10);
         $('#win-lose').text('Sorry you lose better luck next time!');
         $('#win-lose-message').text('To play again select a difficulty');
+        $('#bomb').css("background-image", "url(/assets/images/cross.png)");
     }
 }
 
