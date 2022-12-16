@@ -84,12 +84,15 @@ function checkLetterAgainstWord(guessedLetter) {
         $('#conclusion').show();
         $('#select-difficulty').show(10);
         $('#win-lose').text('Congratulations you win !');
+        $('#win-lose-message').text('To play again select a difficulty');
+        
     } else if (attemptsRemaining === 0) {
         // alert('Game over');
         //$('#main-game').hide();
         $('#conclusion').show();
         $('#select-difficulty').show(10);
         $('#win-lose').text('Sorry you lose better luck next time!');
+        $('#win-lose-message').text('To play again select a difficulty');
     }
 }
 
