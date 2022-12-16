@@ -16,7 +16,7 @@ function resetGameVariables() {
     attemptsRemaining = 15; // Guesses remaining
     lettersCorrect = 0; // How manu letters have been guessed correctly
     lettersTried = [];
-    for(let letter in alphabet){
+    for (let letter in alphabet) {
         $('#' + alphabet[letter]).removeClass('green');
         $('#' + alphabet[letter]).removeClass('red');
         console.log(letter);
@@ -41,7 +41,8 @@ function chooseWord(difficulty) {
             attemptsRemaining = 15;
             break;
     }
-    console.log(word); // Check that a word is chosen
+    console.log(word);
+    console.log(word.length); // Check that a word is chosen
     // Create correct number of underscores in display
     for (i = 0; i < word.length; i++) {
         wordDisplay.push('_')
@@ -49,7 +50,7 @@ function chooseWord(difficulty) {
 }
 
 // Updates the on screen display with the guessed letters
-function updateWordDisplay() { 
+function updateWordDisplay() {
     $('#word-display').text('');
     for (letter in wordDisplay) {
         $('#word-display').append(wordDisplay[letter]);
@@ -79,23 +80,29 @@ function checkLetterAgainstWord(guessedLetter) {
     $('#guesses-remaining').text('Attempts remaining = ' + attemptsRemaining);
     if (lettersCorrect === word.length + 1) {
         // alert('Well done!')
-        $('#main-game').hide();
+        //$('#main-game').hide();
         $('#conclusion').show();
+        $('#select-difficulty').show(10);
         $('#win-lose').text('Congratulations you win !');
     } else if (attemptsRemaining === 0) {
         // alert('Game over');
-        $('#main-game').hide();
+        //$('#main-game').hide();
         $('#conclusion').show();
+        $('#select-difficulty').show(10);
         $('#win-lose').text('Sorry you lose better luck next time!');
     }
 }
 
 console.log(wordDisplay);
 // Hide the divs that are not being used
-$('#main-game').hide();
+$('#main-game').show();
 $('#conclusion').hide();
 $('#word-display').text(wordDisplay); // Update display
 $('#guesses-remaining').text('Attempts remaining = ' + attemptsRemaining);
+$('#word-display').hide();
+$('#guesses-remaining').hide();
+$('#keyboard').hide();
+$('#bomb').hide();
 
 // Create on screen keyboard
 for (let i = 0; i < alphabet.length; i++) {
@@ -112,7 +119,12 @@ $('.button').click(function () {
     resetGameVariables();
     chooseWord(this.id); // Choose new word this.id is difficulty
     updateWordDisplay();
-    $('#select-difficulty').hide(1000);
-    $('#conclusion').hide(1000);
+    $('#select-difficulty').hide(10);
+    $('#conclusion').hide(10);
     $('#main-game').show();
+    $('#word-display').show();
+    $('#guesses-remaining').show();
+    $('#keyboard').show();
+    $('#title-text').hide();
+    $('#bomb').show();
 });
