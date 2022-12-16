@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,39 +10,48 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Bomb Squad</title>
 </head>
+
 <body>
-    <div id="select-difficulty" class="flex-container">
-        <div id="main"><h1>Bomb Squad.</h1></div>
+    <div id="main-game" class="flex-container">
+        <div id="main">
+            <h1>Bomb Squad</h1>
+        </div>
+        <!-- <div id="bomb"><img src="/assets/images/background_large.jpg"> -->
+
         <div id="title-text">
             <h3>Your mission is to disarm the bomb before it explodes!</h3>
-            <p>Dr Death Danger McGee has planted a bomb at the cute bunny holiday camp and demands a ransom of 500 mini-eggs to provide the disarming code.</p>
+            <p>Dr Death Danger has planted a bomb at the cute bunny holiday camp and demands a ransom of 500
+                mini-eggs to provide the disarming code.</p>
             <p>We accidentally ate all the mini eggs so you need to guess the code or we are in big trouble!</p>
-            <p>Select a difficulty below to start the game.</p></div>
-        <div id="difficulty">
-            <div id="easy" class="button"><h2>Easy</h2></div>
-            <div id="medium" class="button"><h2>Medium</h2></div>
-            <div id="hard" class="button"><h2>Hard</h2></div>
+            <p>Select a difficulty below to start the game.</p>
         </div>
-    </div>
-    <div id="main-game" class="flex-container">
-        <div id="main"><h1>Bomb Squad.</h1></div>
-        <div id="bomb">
-            <div id="word-display">_ _ _ _ _</div>
+
+        <div id="conclusion">
+            <div id="title-text">
+                <h3 id="win-lose"></h3>
+                <p id="win-lose-message"></p>
+
+            </div>
         </div>
+        <div id="select-difficulty">
+            <div id="easy" class="button">
+                <h2>Easy</h2>
+            </div>
+            <div id="medium" class="button">
+                <h2>Medium</h2>
+            </div>
+            <div id="hard" class="button">
+                <h2>Hard</h2>
+            </div>
+        </div>
+
+        <div id="bomb"></div>
+        <div id="word-display">_ _ _ _ _</div>
         <div id="guesses-remaining"></div>
         <div id="keyboard"></div>
-    </div>
-    <div id="conclusion" class="flex-container">
-        <div id="main"><h1>Bomb Squad.</h1></div>
-        <div id="title-text">
-            <h3 id="win-lose"></h3>
-            <p id="win-lose-message"></p>
-        </div>
-        <div id="play-again"><p>Play again ?</p>
-            <div id="easy" class="button"><h2>Easy</h2></div>
-            <div id="medium" class="button"><h2>Medium</h2></div>
-            <div id="hard" class="button"><h2>Hard</h2></div>
+
     </div>
     <script src="assets/scripts/script.js"></script>
 </body>
+
 </html>
