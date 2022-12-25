@@ -34,11 +34,11 @@ function chooseWord(difficulty) {
             attemptsRemaining = 20;
             break;
         case 'medium':
-            word = dictMedium[Math.floor(Math.random() * dictEasy.length)];
+            word = dictMedium[Math.floor(Math.random() * dictMedium.length)];
             attemptsRemaining = 15;
             break;
         case 'hard':
-            word = dictHard[Math.floor(Math.random() * dictEasy.length)];
+            word = dictHard[Math.floor(Math.random() * dictHard.length)];
             attemptsRemaining = 15;
             break;
     }
