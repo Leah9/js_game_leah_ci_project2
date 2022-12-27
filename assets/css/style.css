@@ -8,16 +8,13 @@ h1 {
 
 .flex-container {
     max-width: 900px;
-    /* min-width: 600px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0;   
+    margin: 0;
 }
 
 #main {
-    /* background-color: blue; */
-    /* justify-content: center; */
     text-align: center;
     display: inline-block;
 }
@@ -37,7 +34,7 @@ h1 {
     background-position: center;
 }
 
-.keyboard{
+.keyboard {
     font-size: 1.5rem;
     float: left;
     padding: 4px;
@@ -64,7 +61,7 @@ h1 {
     margin: 0.1em;
 }
 
-#select-difficulty{
+#select-difficulty {
     display: flex;
     justify-content: center;
 }
