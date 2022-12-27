@@ -20,7 +20,7 @@ function resetGameVariables() {
         $('#' + alphabet[letter]).removeClass('green');
         $('#' + alphabet[letter]).removeClass('red');
     }
-    $('#bomb').css("background-image", "url(assets/images/Bunny-bomb.png)");
+    $('#bomb').css("background-image", "url(assets/images/bunny-bomb.png)");
 }
 
 function chooseWord(difficulty) {
@@ -81,7 +81,7 @@ function checkLetterAgainstWord(guessedLetter) {
         $('#select-difficulty').show(10);
         $('#win-lose').text('Congratulations you win !');
         $('#win-lose-message').text('To play again select a difficulty');
-        $('#bomb').css("background-image", "url(assets/images/Bunny.png)");
+        $('#bomb').css("background-image", "url(assets/images/bunny.png)");
         // Check for lose condition
     } else if (attemptsRemaining === 0) {
         $('#keyboard').hide();
