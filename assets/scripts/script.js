@@ -22,7 +22,6 @@ function resetGameVariables() {
         console.log(letter);
     }
     $('#bomb').css("background-image", "url(assets/images/Bunny-bomb.png)");
-    //wordDisplay = [];
 }
 
 function chooseWord(difficulty) {
@@ -82,6 +81,7 @@ function checkLetterAgainstWord(guessedLetter) {
     if (lettersCorrect === word.length + 1) {
         // alert('Well done!')
         //$('#main-game').hide();
+        $('#keyboard').hide();
         $('#conclusion').show();
         $('#select-difficulty').show(10);
         $('#win-lose').text('Congratulations you win !');
@@ -90,6 +90,7 @@ function checkLetterAgainstWord(guessedLetter) {
     } else if (attemptsRemaining === 0) {
         // alert('Game over');
         //$('#main-game').hide();
+        $('#keyboard').hide();
         $('#conclusion').show();
         $('#select-difficulty').show(10);
         $('#win-lose').text('Sorry you lose better luck next time!');
