@@ -100,3 +100,59 @@ https://wireframe.cc/TLwtMm
 9. If the word is guessed correctly before they run out of time they win
 10. If the user runs out of turns the bomb explodes and the user loses
 11. Win or Loose is displayed with the option to try again.
+
+## Testing
+
+### When selecting Hard difficulty occasionally the button does not work.
+Upon checking the console the following error was displayed 'undefined script.js:45:13'
+Line 45 was attempting to display the word and the variable was undefined but not all the time.
+The error was found in the following code:
+```javascript
+switch (difficulty) {
+        case 'easy':
+            word = dictEasy[Math.floor(Math.random() * dictEasy.length)];
+            attemptsRemaining = 20;
+            break;
+        case 'medium':
+            word = dictMedium[Math.floor(Math.random() * dictEasy.length)]; //dictEasy should be dictMedium
+            attemptsRemaining = 15;
+            break;
+        case 'hard':
+            word = dictHard[Math.floor(Math.random() * dictEasy.length)]; //dictEasy should be dictHard
+            attemptsRemaining = 15;
+            break;
+    }
+```
+The medium and hard case were using the length of the easy dictionary. Correcting the code to use the correct dictionary for length resolved the issue.
+
+```javascript
+switch (difficulty) {
+        case 'easy':
+            word = dictEasy[Math.floor(Math.random() * dictEasy.length)];
+            attemptsRemaining = 20;
+            break;
+        case 'medium':
+            word = dictMedium[Math.floor(Math.random() * dictMedium.length)];
+            attemptsRemaining = 15;
+            break;
+        case 'hard':
+            word = dictHard[Math.floor(Math.random() * dictHard.length)];
+            attemptsRemaining = 15;
+            break;
+    }
+```
+
+### GitHub issue 1 When win / lose the win lose message is not visible on smaller screens.
+Resolved by hiding the keyboard on the conclusion screen.
+```javascript
+$('#keyboard').hide();
+```
+
+### Github issue 2 When starting a new game the attempts remaining display retains the previous value until a key is pressed.
+Added the following just after difficulty selection.
+```javascript
+$('#guesses-remaining').text('Attempts remaining = ' + attemptsRemaining);
+```
+
+
+

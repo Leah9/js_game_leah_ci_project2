@@ -41,6 +41,7 @@ function chooseWord(difficulty) {
             attemptsRemaining = 15;
             break;
     }
+    $('#guesses-remaining').text('Attempts remaining = ' + attemptsRemaining);
     console.log(word);
     console.log(word.length); // Check that a word is chosen
     // Create correct number of underscores in display
