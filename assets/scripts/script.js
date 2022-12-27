@@ -3,7 +3,7 @@ const dictEasy = ['CAT', 'DOG', 'BALL', 'CAR', 'BUS', 'TRAIN'];
 const dictMedium = ['BRIDGE', 'VIADUCT', 'MOTORWAY', 'LANDSCAPE', 'PORTRAIT', 'JACKET', 'PICTURE'];
 const dictHard = ['BIOSPHERE', 'ADVENTURE', 'ENVIRONMENT', 'CONTINENT'];
 // Create an array to contain our alphabet
-const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
 
 let lettersTried = []; // Array of letters that have been tried
 let attemptsRemaining = 15; // Guesses remaining
@@ -82,7 +82,7 @@ function checkLetterAgainstWord(guessedLetter) {
         $('#win-lose').text('Congratulations you win !');
         $('#win-lose-message').text('To play again select a difficulty');
         $('#bomb').css("background-image", "url(assets/images/Bunny.png)");
-    // Check for lose condition
+        // Check for lose condition
     } else if (attemptsRemaining === 0) {
         $('#keyboard').hide();
         $('#conclusion').show();
@@ -106,7 +106,7 @@ $('#keyboard').hide();
 $('#bomb').hide();
 
 // Create on screen keyboard
-for (let i = 0; i < alphabet.length; i++) {
+for (let i = 0; i < 26; i++) {
     $('#keyboard').append(`<div id='${alphabet[i]}' class='keyboard'>${alphabet[i]}</div>`);
 }
 
@@ -114,6 +114,18 @@ for (let i = 0; i < alphabet.length; i++) {
 $('.keyboard').click(function () {
     checkLetterAgainstWord(this.id);
 });
+
+// Accept keyboard input to make the game more accessible
+window.onkeyup = function (keypress) {
+    if ($('#keyboard').is(':visible')) {
+        if (alphabet.includes(keypress.key)) {
+            checkLetterAgainstWord(keypress.key.toUpperCase());
+        }
+        else {
+            alert('Invalid input! Valid characters are A to Z');
+        }
+    }
+};
 
 // Called when the difficulty is pressed
 $('.button').click(function () {
@@ -130,3 +142,6 @@ $('.button').click(function () {
     $('#title-text').hide();
     $('#bomb').show();
 });
+
+
+
