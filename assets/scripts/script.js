@@ -87,6 +87,7 @@ function checkLetterAgainstWord(guessedLetter) {
         $('#select-difficulty').show(10);
         $('#win-lose').text('Congratulations you win !');
         $('#win-lose-message').text('To play again select a difficulty');
+        $('#bomb').css("background-image", "url(assets/images/Bunny.png)");
         
     } else if (attemptsRemaining === 0) {
         // alert('Game over');
