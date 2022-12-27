@@ -94,7 +94,7 @@ function checkLetterAgainstWord(guessedLetter) {
         $('#keyboard').hide();
         $('#conclusion').show();
         $('#select-difficulty').show(10);
-        $('#win-lose').text('Sorry you lose better luck next time!');
+        $('#win-lose').text('Sorry you lose. The word was ' + word);
         $('#win-lose-message').text('To play again select a difficulty');
         $('#bomb').css("background-image", "url(assets/images/cross.png)");
     }
