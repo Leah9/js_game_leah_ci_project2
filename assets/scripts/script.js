@@ -77,6 +77,7 @@ function checkLetterAgainstWord(guessedLetter) {
     if (lettersCorrect === word.length + 1) {
         $('#keyboard').hide();
         $('#conclusion').show();
+        $('#message').show();
         $('#select-difficulty').show(10);
         $('#win-lose').text('Congratulations you win !');
         $('#win-lose-message').text('To play again select a difficulty');
@@ -85,6 +86,7 @@ function checkLetterAgainstWord(guessedLetter) {
     } else if (attemptsRemaining === 0) {
         $('#keyboard').hide();
         $('#conclusion').show();
+        $('#message').show();
         $('#select-difficulty').show(10);
         $('#win-lose').text('Sorry you lose. The word was ' + word);
         $('#win-lose-message').text('To play again select a difficulty');
@@ -94,6 +96,7 @@ function checkLetterAgainstWord(guessedLetter) {
 
 $('#main-game').show();
 // Hide the divs that are not being used
+$('#message').hide();
 $('#conclusion').hide();
 $('#word-display').text(wordDisplay); // Update display
 $('#guesses-remaining').text('Attempts remaining = ' + attemptsRemaining);
@@ -117,6 +120,7 @@ $('.button').click(function () {
     resetGameVariables();
     chooseWord(this.id); // Choose new word this.id is difficulty
     updateWordDisplay();
+    $('#message').hide();
     $('#select-difficulty').hide(10);
     $('#conclusion').hide(10);
     $('#main-game').show();

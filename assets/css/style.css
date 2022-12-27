@@ -81,3 +81,8 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
+#message {
+    display: flex;
+    justify-content: center;
+}
