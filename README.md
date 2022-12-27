@@ -168,6 +168,13 @@ c71e5b7 Displays new bunny image on win.
 ### Linting the script
 Several lines missing semicolon.
 
+### Validation
+HTTP valid
+https://validator.w3.org/nu/?doc=https%3A%2F%2Fleah9.github.io%2Fjs_game_leah_ci_project2%2F
+
+CSS valid
+https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fleah9.github.io%2Fjs_game_leah_ci_project2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+
 ## Acknowledgements and credits
  ### Favicon
  Generated on https://favicon.io/favicon-generator/
