@@ -103,6 +103,8 @@ https://wireframe.cc/TLwtMm
 
 ## Testing
 
+During testing the following issues were found.
+
 ### When selecting Hard difficulty occasionally the button does not work.
 Upon checking the console the following error was displayed 'undefined script.js:45:13'
 Line 45 was attempting to display the word and the variable was undefined but not all the time.
@@ -153,6 +155,20 @@ Added the following just after difficulty selection.
 ```javascript
 $('#guesses-remaining').text('Attempts remaining = ' + attemptsRemaining);
 ```
+
+### Github issue 3the word is not displayed on win.
+Added the following code to resolve.
+```javascript
+$('#win-lose').text('Sorry you lose. The word was ' + word);
+```
+
+### GitHub issue 4 Success image still has a bomb on it.
+c71e5b7 Displays new bunny image on win.
+
+### Linting the script
+Several lines missing semicolon.
+
+
 
 
 

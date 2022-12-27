@@ -19,7 +19,6 @@ function resetGameVariables() {
     for (let letter in alphabet) {
         $('#' + alphabet[letter]).removeClass('green');
         $('#' + alphabet[letter]).removeClass('red');
-        console.log(letter);
     }
     $('#bomb').css("background-image", "url(assets/images/Bunny-bomb.png)");
 }
@@ -42,28 +41,25 @@ function chooseWord(difficulty) {
             break;
     }
     $('#guesses-remaining').text('Attempts remaining = ' + attemptsRemaining);
-    console.log(word);
-    console.log(word.length); // Check that a word is chosen
     // Create correct number of underscores in display
     for (i = 0; i < word.length; i++) {
-        wordDisplay.push('_')
+        wordDisplay.push('_');
     }
 }
 
 // Updates the on screen display with the guessed letters
 function updateWordDisplay() {
     $('#word-display').text('');
-    for (letter in wordDisplay) {
+    for (let letter in wordDisplay) {
         $('#word-display').append(wordDisplay[letter]);
     }
     lettersCorrect++;
 }
 
 function checkLetterAgainstWord(guessedLetter) {
-    for (letter in word) {
+    for (let letter in word) {
         // Check if the letter is in the word
         if (word[letter] == guessedLetter) {
-            console.log('CORRECT')
             // Colour the keyboard green
             $('#' + guessedLetter).addClass('green');
             wordDisplay[letter] = guessedLetter;
@@ -73,25 +69,20 @@ function checkLetterAgainstWord(guessedLetter) {
             $('#' + guessedLetter).addClass('red');
         }
     }
+    //Add the guessed letter to the list of guessed letters
     lettersTried.push(guessedLetter);
-    console.log(lettersTried);
-    console.log('word length = ' + word.length);
-    console.log('letters correct = ' + lettersCorrect);
     attemptsRemaining--;
     $('#guesses-remaining').text('Attempts remaining = ' + attemptsRemaining);
+    // Check for win condition
     if (lettersCorrect === word.length + 1) {
-        // alert('Well done!')
-        //$('#main-game').hide();
         $('#keyboard').hide();
         $('#conclusion').show();
         $('#select-difficulty').show(10);
         $('#win-lose').text('Congratulations you win !');
         $('#win-lose-message').text('To play again select a difficulty');
         $('#bomb').css("background-image", "url(assets/images/Bunny.png)");
-        
+    // Check for lose condition
     } else if (attemptsRemaining === 0) {
-        // alert('Game over');
-        //$('#main-game').hide();
         $('#keyboard').hide();
         $('#conclusion').show();
         $('#select-difficulty').show(10);
@@ -101,9 +92,8 @@ function checkLetterAgainstWord(guessedLetter) {
     }
 }
 
-console.log(wordDisplay);
-// Hide the divs that are not being used
 $('#main-game').show();
+// Hide the divs that are not being used
 $('#conclusion').hide();
 $('#word-display').text(wordDisplay); // Update display
 $('#guesses-remaining').text('Attempts remaining = ' + attemptsRemaining);
