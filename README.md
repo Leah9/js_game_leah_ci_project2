@@ -168,6 +168,17 @@ c71e5b7 Displays new bunny image on win.
 ### Linting the script
 Several lines missing semicolon.
 
+## Acknowledgements and credits
+ ### Favicon
+ Generated on https://favicon.io/favicon-generator/
+ This favicon was generated using the following font:
+
+- Font Title: Engagement
+- Font Author: Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name "Engagement"
+- Font Source: http://fonts.gstatic.com/s/engagement/v22/x3dlckLDZbqa7RUs9MFVXNossybsHQI.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
+
+
 
 
 
